@@ -12,7 +12,7 @@ app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), 'sta
 app.config['SECRET_KEY'] = 'asdf#FGSgvasgf$5$WGT'
 
 # Configurar CORS para permitir requisições do frontend
-CORS(app, supports_credentials=True)
+CORS(app, origins=["https://itabus-frontend.vercel.app"], supports_credentials=True )
 
 app.register_blueprint(user_bp, url_prefix='/api')
 
